@@ -4,17 +4,17 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/rewrite-target: /$2
-  name: opsta-dev-web
-  namespace: student46-opsta-dev
+  name: static-dev-web
+  namespace: student46-static-dev
 spec:
   rules:
   - host: dev.opsta.net
     http:
       paths:
-      - path: /student46/opsta(/|$)(.*)
+      - path: /student46/static(/|$)(.*)
         pathType: Prefix
         backend:
           service:
-            name: opsta-dev-web
+            name: static-dev-web
             port:
               number: 80

@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: opsta-dev-web
-  namespace: student46-opsta-dev
+  name: static-dev-web
+  namespace: student46-static-dev
   labels:
-    app: opsta-dev-web
+    app: static-dev-web
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: opsta-dev-web
+      app: static-dev-web
   template:
     metadata:
       labels:
-        app: opsta-dev-web
+        app: static-dev-web
     spec:
       containers:
-      - name: opsta-dev-web
-        image: ghcr.io/fxselazy/opsta-web:dev
+      - name: static-dev-web
+        image: ghcr.io/fxselazy/static-web:dev
         imagePullPolicy: Always
         ports:
         - containerPort: 80
